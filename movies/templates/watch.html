@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<div class="container">
+  
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h3 class="display-4">Name: {{movie.MName}}</h3>
+            <p class="lead"> {{movie.discription}} </p>
+
+            <p style="font-weight: bold; font-size: 20pt">Trailer:</p>
+            <div class="embed-responsive embed-responsive-16by9" style="width: 50%">
+                <iframe class="embed-responsive-item" src="{{movie.trailer}} "frameborder="0" controls=0></iframe>
+              </div>
+          <br><br>
+         <h2> Rating:{{movie.rating}}%</h2>
+          <h3>Uploader: {{movie.uploader}}</h3>
+        </div>
+      </div>
+      <br>
+    <a href="{% url 'list' %} " class="btn btn-info w-100">Home</a>
+</div>
+{% endblock %}

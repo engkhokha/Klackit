@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<br><br>
+<div class="col-xs-1" align="center">
+    <form method="post" class="form-group">
+        <div  style="width:30%; border: solid lightblue 2pt; border-radius: 10pt; box-shadow: black 1pt 1pt 3pt; padding: 20px" align="left">
+        {% csrf_token %}
+        {% for field in form %}
+          <p class="">
+            <p class="font-weight-bold blue-grey-text">{{ field.label_tag }}</p>
+           <p align="center" class="">{{ field }}</p> 
+           <br> 
+            {% for error in field.errors %}
+              <p style="color: red">{{ error }}</p>
+            {% endfor %}
+            
+        </p>
+        {% endfor %}
+       <p align="center"><input type="submit" class="btn btn-info rounded" value="Sign Up"></p> 
+    </div>
+      </form>
+</div>
+  
+{% endblock %}
